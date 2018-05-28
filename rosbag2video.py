@@ -5,6 +5,9 @@ rosbag2video.py
 rosbag to video file conversion tool
 by Maximilian Laiacker 2016
 post@mlaiacker.de
+
+edited by Alexander Brown brownaa@lafayette.edu
+to skip "dead time" in May 2018
 """
 
 import roslib
@@ -126,7 +129,7 @@ for files in range(0,len(opt_files)):
                         t_first[topic] = t;
                         t_video[topic] = 0;
                         t_file[topic] = 0
-                    t_file[topic] = (t-t_first[topic]).to_sec()
+                    t_file[topic] +=1.0/opt_fps# (t-t_first[topic]).to_sec()
                     while t_video[topic]<t_file[topic]:
                         if not topic in p_avconv:
                             if opt_out_file=="":
