@@ -4,16 +4,40 @@
     rosbag to video file conversion tool 
     by Maximilian Laiacker 2016
     post@mlaiacker.de
+    
+    Edited by Alexander Brown for use in VU fish lab May 2018
+    brownaa@lafayette.edu  
+    
 ## install:
 
 avconv is needed and can be installed on Ubuntu with:
 
-    sudo apt install libav-tools
+    sudo apt-get install libav-tools
 
+Then download this repository by clicking the "clone or download" button and copying the git repository address.
+
+Then navigate in the terminal to somewhere you'll be saving bag files. Say it's $/bagfiles
+
+Then clone this repository:
+
+``` $git clone https://github.com/alexanderallenbrown/rosbag2video.git
+```
 
 
 ## usage:
-rosbag2video.py [--fps 25] [-o outputfile] [-s (show video)] [-t topic] bagfile1 [bagfile2] ...
+
+In a terminal, navigate into the directory rosbag2video (see above... would be cd ~/bagfiles/rosbag2video)
+
+Then run:
+
+```python rosbag2video2.py --fps 30 -o your_video_name.mp4 ../*.bag ```
+
+This will run the program on all bagfiles one directory up (see the ```../*.bag```) and produce one video called your_video_name.mp4. 
+
+
+General usage:
+
+python rosbag2video.py [--fps 25] [-o outputfile] [-s (show video)] [-t topic] bagfile1 [bagfile2] ...
 
     rosbag2video converts image sequence(s) in ros bag file(s) to video file(s) with fixed frame rate using avconv.
     avconv needs to be installed!
