@@ -20,8 +20,7 @@ Then navigate in the terminal to somewhere you'll be saving bag files. Say it's 
 
 Then clone this repository:
 
-``` $git clone https://github.com/alexanderallenbrown/rosbag2video.git
-```
+``` git clone https://github.com/alexanderallenbrown/rosbag2video.git```
 
 
 ## usage:
