@@ -121,8 +121,8 @@ for files in range(0,len(opt_files)):
                         np_arr = np.fromstring(msg.data, np.uint8)
                         cv_image = cv2.imdecode(np_arr, cv2.CV_LOAD_IMAGE_COLOR)
                 else:
-                    print 'unsuportet format:', msg.format
-                    exit(1)
+                    print 'unsuported format:', msg.format
+                    #exit(1)
 
                 if len(msg.data)>0:
                     if not topic in t_first :
